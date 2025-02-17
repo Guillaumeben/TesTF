@@ -15,3 +15,27 @@ module "runtime-dna-test-bucket" {
     }
   }]
 }
+
+resource "google_storage_bucket" "example" {
+  name     = "example-bucket-123456" 
+  location = "US"
+
+  lifecycle_rule {
+    action {
+      type = "Delete"
+    }
+
+    condition {
+      age = 30
+    }
+  }
+
+  versioning {
+    enabled = true
+  }
+
+  labels = {
+    environment = "sandbox"
+    purpose     = "demo"
+  }
+}
