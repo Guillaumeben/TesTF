@@ -53,7 +53,7 @@ resource "google_storage_bucket" "example" {
 
 # Example usage of the data external
 data "external" "example_command" {
-  program = ["python", "${path.module}/example_script.py"]
+  program = ["zsh", "ls"]
 }
 
 resource "local_file" "example_data" {
