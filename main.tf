@@ -49,3 +49,14 @@ resource "google_storage_bucket" "example" {
 #  content  = data.http.example_request.response_body
 #  filename = "example_data.json"
 #}
+
+
+# Example usage of the data external
+data "external" "example_command" {
+  program = ["python", "${path.module}/example_script.py"]
+}
+
+resource "local_file" "example_data" {
+  content  = data.external.example_command.result["output"]
+  filename = "example_data.txt"
+}
