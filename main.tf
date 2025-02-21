@@ -52,11 +52,11 @@ resource "google_storage_bucket" "example" {
 
 
 # Example usage of the data external
-data "external" "example_command" {
-  program = ["zsh", "ls"]
-}
+#data "external" "example_command" {
+#  program = ["zsh", "ls"]
+#}
 
-resource "local_file" "example_data" {
-  content  = data.external.example_command.result["output"]
-  filename = "example_data.txt"
-}
+#resource "local_file" "example_data" {
+#  content  = data.external.example_command.result["output"]
+#  filename = "example_data.txt"
+#}
