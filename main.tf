@@ -41,14 +41,14 @@ resource "google_storage_bucket" "example" {
 }
 
 # Example usage of the data http
-#data "http" "example_request" {
-#  url = "https://example.com/api/data"
-#}
-#
-#resource "local_file" "example_data" {
-#  content  = data.http.example_request.response_body
-#  filename = "example_data.json"
-#}
+data "http" "example_request" {
+  url = "https://example.com/api/data"
+}
+
+resource "local_file" "example_data" {
+  content  = data.http.example_request.response_body
+  filename = "example_data.json"
+}
 
 
 # Example usage of the data external
