@@ -1,5 +1,5 @@
 module "runtime-dna-test-bucket" {
-  source        = "git::https://github.com/DataDog/cloud-inventory//terraform-modules/gcp-bucket?ref=gcp-bucket_v0.10.0"
+  source        = "git::https://github.com/DataD0g/cloud-inventory//terraform-modules/gcp-bucket?ref=gcp-bucket_v0.10.0"
   bucket_name   = "runtime-dna-test-bucket-2"
   repository    = "runtime-dna"
   team          = "fabric-edge-ingress"
@@ -41,14 +41,14 @@ resource "google_storage_bucket" "example" {
 }
 
 # Example usage of the data http
-data "http" "example_request" {
-  url = "https://example.com/api/data"
-}
+#data "http" "example_request" {
+#  url = "https://example.com/api/data"
+#}
 
-resource "local_file" "example_data" {
-  content  = data.http.example_request.response_body
-  filename = "example_data.json"
-}
+#resource "local_file" "example_data" {
+#  content  = data.http.example_request.response_body
+3  filename = "example_data.json"
+#}
 
 
 # Example usage of the data external
